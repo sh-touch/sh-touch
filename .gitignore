@@ -1,0 +1,6 @@
+# Ignore config folders of some IDEs
+/.idea/
+
+# Ignore .scratch folder,
+# it can be used for storing some additional stuff that shouldn't be commited
+/.scratch/
