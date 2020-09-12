@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--suppress CssUnusedSymbol -->
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Help for shtouch.sh ver. 1.0.0-rc1</title>
+    <style>
+        * { font-family: sans-serif; }
+        pre { font-family: monospace; font-size: 16px;font-weight: lighter; }
+        h1  { font-size: 40px; }
+        h2 { font-size: 32px; margin: 32px 0 10px 0; }
+        h3 { font-size: 28px; margin: 28px 0 10px 0; }
+        h4 { font-size: 24px; margin: 24px 0 10px 0; }
+        h5 { font-size: 20px; margin: 20px 0 10px 0; }
+        h6 { font-size: 16px; margin: 16px 0 10px 0; }
+        h1 .shtouch-inline-value, h1 .shtouch-inline-code { font-size: 43px; }
+        h2 .shtouch-inline-value, h2 .shtouch-inline-code { font-size: 35px; }
+        h3 .shtouch-inline-value, h3 .shtouch-inline-code { font-size: 30px; }
+        h4 .shtouch-inline-value, h4 .shtouch-inline-code { font-size: 26px; }
+        h5 .shtouch-inline-value, h5 .shtouch-inline-code { font-size: 22px; }
+        h6 .shtouch-inline-value, h6 .shtouch-inline-code { font-size: 18px; }
+        .shtouch-inline-value { font-family: monospace; color: green; font-size: 16px; font-weight: lighter; }
+        .shtouch-inline-code, .shtouch-inline-option  { font-family: monospace; color: blue; font-size: 16px; font-weight: lighter; }
+        .shtouch-code-bash { border-radius: 5px; color: rgba(255, 255, 255, 0.5); background-color: #343d45; padding: 10px; }
+    </style>
+</head>
+<body>
+<h1>Help for <span class='shtouch-inline-value'>shtouch.sh</span> ver. <span class='shtouch-inline-value'>1.0.0-rc1</span></h1>
+
+
+
+<h3>What it does?</h3>
+
+As name suggest <span class='shtouch-inline-code'>touch</span> version of command for bash scripts.
+It just creates scratch shell script with <span class='shtouch-inline-value'>.sh</span> or <span class='shtouch-inline-value'>.zsh</span>, proper shebang and sample code inside.<br/>
+<br/>
+You can reuse sample code or remove it and write your own.<br/>
+<br/>
+Just leave generated shebang.<br/>
+See: <a href='https://en.wikipedia.org/wiki/Shebang_(Unix)' class='shtouch-external-link' target='_blank'>https://en.wikipedia.org/wiki/Shebang_(Unix)</a>
+
+<h3>Where</h3>
+
+<span class='shtouch-inline-option'>&lt;filepath&gt;</span> is absolute or relative path for new created script, if filename only given it will create script in current directory<br/>
+<br/>
+<span class='shtouch-inline-option'>&lt;extension&gt;</span> should be <span class='shtouch-inline-value'>.sh</span> or <span class='shtouch-inline-value'>.zsh</span>, if not specified <span class='shtouch-inline-value'>.sh</span> will be added automatically.<br/>
+<br/>
+<span class='shtouch-inline-option'>&lt;output&gt;</span> If specified, after creation the file it will be opened in this editor, possibilities:
+
+<h5>Display</h5>
+
+  - <span class='shtouch-inline-value'>cat</span> displays generated code with <span class='shtouch-inline-code'>cat</span> command in terminal and returns to shell<br/>
+  - <span class='shtouch-inline-value'>none</span> or blank writes output file without displaying/editing and returns to shell
+
+<h5>Command line editors (if installed)</h5>
+
+  - <span class='shtouch-inline-value'>vim</span><br/>
+  - <span class='shtouch-inline-value'>nano</span><br/>
+  - <span class='shtouch-inline-value'>jed</span>
+
+<h5>GUI editors on Mac (if installed)</h5>
+
+  - <span class='shtouch-inline-value'>edit</span> for default OSX editor<br/>
+  - <span class='shtouch-inline-value'>sublime</span> for OSX Sublime Text.app<br/>
+  - <span class='shtouch-inline-value'>textedit</span> for OSX TextEdit.app
+
+<h3>Samples</h3>
+
+<h5>(optionally)</h5>
+
+<pre class='shtouch-code-bash'>
+cd /path/with/your/executables
+</pre>
+
+<h5>To create script with <span class='shtouch-inline-value'>#!/usr/bin/env bash</span> </h5>
+
+<pre class='shtouch-code-bash'>
+shtouch.sh foo.sh
+</pre>
+
+<h5>To create script with <span class='shtouch-inline-value'>#!/usr/bin/env zsh</span> </h5>
+<pre class='shtouch-code-bash'>
+shtouch.sh foo.zsh
+</pre>
+
+<h5>If extension is not given, the default bash is created:</h5>
+
+<span class='shtouch-inline-code'>shtouch.sh baz</span><br/><br/>
+(creates <span class='shtouch-inline-value'>baz.sh</span> script with <span class='shtouch-inline-value'>#!/usr/bin/env bash</span> shebang)
+
+<h5>Of course you can always use absolute or relative path for new file like:</h5>
+
+<pre class='shtouch-code-bash'>
+shtouch.sh /full/path/to/zen.sh
+shtouch.sh ~/in-home-directory.sh
+shtouch.sh in-current-directory.sh
+</pre>
+
+<h5>If for some reason you want/need to use file without extension, just rename it after creation like</h5>
+
+<pre class='shtouch-code-bash'>
+mv new-script.sh new-script
+</pre>
+
+<h3>Exported variables</h3>
+
+To modify final output you can export some variables in your shell before executing <span class='shtouch-inline-code'>shtouch.sh</span>
+or add selected exports to your profile file.
+
+<h4>To check current exported variables, just <span class='shtouch-inline-code'>echo</span> one of them in your terminal, like </h4>
+<pre class='shtouch-code-bash'>
+echo $SHTOUCH_DEFAULT
+</pre>
+
+<h5>To disable sample body:</h5>
+(allowed <span class='shtouch-inline-code'>true</span>, <span class='shtouch-inline-code'>false</span>)
+<pre class='shtouch-code-bash'>
+export SHTOUCH_BODY=false
+</pre>
+
+<h5>To disable generator comment:</h5>
+(allowed <span class='shtouch-inline-code'>true</span>, <span class='shtouch-inline-code'>false</span>)
+<pre class='shtouch-code-bash'>
+export SHTOUCH_COMMENT=false
+</pre>
+
+<h5>To disable colored output:</h5>
+(allowed <span class='shtouch-inline-code'>true</span>, <span class='shtouch-inline-code'>false</span>)
+<pre class='shtouch-code-bash'>
+export SHTOUCH_COLORS=false
+</pre>
+
+<h5>To set default extension to be used when auto mode</h5>
+* required extension must be no-spaces word, starting with dot like <span class='shtouch-inline-value'>.sh</span>, <span class='shtouch-inline-value'>.zsh</span>, <span class='shtouch-inline-value'>.my-own-extension</span>
+* suggested <span class='shtouch-inline-value'>.sh</span> or <span class='shtouch-inline-value'>.zsh</span>
+* default <span class='shtouch-inline-value'>.sh</span>
+<pre class='shtouch-code-bash'>
+export SHTOUCH_DEFAULT=<span class='shtouch-inline-value'>.sh</span>
+</pre>
+
+<h5>That's all!</h5>
+Now you can run:
+<pre class='shtouch-code-bash'>
+shtouch.sh have-fun-:-p
+</pre><br/>
+<br/>
+© 2020 Marcus biesior Biesioroff
+</body>
+</html>
