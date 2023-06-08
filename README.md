@@ -29,33 +29,20 @@ It creates isolated environment for testing using ddev (kudos goes to Ghanshyam 
    ddev ssh
    ```
 
-4. Clone repo into home directory and install to script.
+4. Clone repo into home directory and install the script.
    ```
-   cd ~
+   cd ~ \
+      && git clone https://github.com/sh-touch/sh-touch.git \
+      && ~/sh-touch/bin/install-dev.sh
    ```
-   
+5. To restart in-container cloning and installation just delete the folder and repeat step 4
    ```
-   git clone https://github.com/sh-touch/sh-touch.git
-   ```
-   
-   ```   
-   cd sh-touch
-   ```
-   ```
-   git checkout dev
-   ```
-  
-   ```
-   ln -s bin/sh-touch.sh /user/local/bin/sh-touch
+   rm -fr ~/sh-touch \
+      && rm /usr/local/bin/sh-touch \
+      && echo -e "Repeat step 4"
    ```
 
-  ```
-   cd ~ \
-   && git clone https://github.com/sh-touch/sh-touch.git \
-   && cd sh-touch \
-   && git checkout dev \
-   && ln -s bin/sh-touch.sh /user/local/bin/sh-touch
-   ```
+# start using `sh-touch` command in your terminal 😍
 
 
 
