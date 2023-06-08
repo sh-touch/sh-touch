@@ -1,6 +1,6 @@
-# `sh-touch` project ver.: `0.9.0-beta`
+# `sh-touch` project ver.: `0.9.4-beta`
 [![Donate](https://img.shields.io/static/v1?label=Donate&message=paypal.me/biesior&color=brightgreen 'Donate the contributor via PayPal.me, amount is up to you')](https://www.paypal.me/biesior/4.99EUR)
-[![State](https://img.shields.io/static/v1?label=sh-touch&message=0.9.0-beta&color=blue 'Latest known version')](https://github.com/sh-touch/sh-touch/)
+[![State](https://img.shields.io/static/v1?label=sh-touch&message=0.9.4-beta&color=blue 'Latest known version')](https://github.com/sh-touch/sh-touch/)
 [![Minimum bash version](https://img.shields.io/static/v1?label=bash&message=3.2+or+higher&color=blue 'Minimum Bash version to run this script')](https://www.gnu.org/software/bash/)
 
 Note: This is ultra basic instruction in development, will be written better soon.

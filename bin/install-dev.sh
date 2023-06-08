@@ -9,9 +9,12 @@ if [ ! -d "$HOME/sh-touch" ]; then
 fi
 cd ~/sh-touch || exit && git checkout dev && cd ~ || exit
 
-if [ ! -d "$HOME/sh-touch" ]; then
+if [ ! -f "/usr/local/bin/sh-touch" ]; then
   ln -s ~/sh-touch/bin/sh-touch.sh /usr/local/bin/sh-touch
+  echo -ne "$(green "command was installed, run it terminal using command: ")"
+else
+  echo -ne "$(green "command was existing and updated, run it in terminal using command: ")"
 fi
 
-echo -ne "$(green "script was installed,  run it terminal using command: ")"
+
 echo -e "$(cyan "sh-touch")"

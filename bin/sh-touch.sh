@@ -22,7 +22,7 @@ fi
 
 # Semantic version for this script:
 SemanticProject='sh-touch'
-SemanticVersion='0.9.2-beta'
+SemanticVersion='0.9.3-beta'
 SemanticRepository='https://github.com/sh-touch/sh-touched/'
 SemanticFile='bin/sh-touch'
 
@@ -172,7 +172,8 @@ function listOptionsSpace() {
 
 if [ "$1" = "" ]; then
   programError "No filename specified!
-Use $(inlineCode "sh-touch -h") for help"
+Use $(inlineCode "sh-touch -h") for help
+ or $(inlineCode "sh-touch -i") for interactive mode"
   exit 1
 fi
 

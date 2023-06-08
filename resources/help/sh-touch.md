@@ -1,6 +1,6 @@
-# Help for `sh-touch` command, ver. `0.9.0-beta`  
+# Help for `sh-touch` ver. `0.9.3-beta`  
 [![Donate](https://img.shields.io/static/v1?label=Donate&message=paypal.me/biesior&color=brightgreen 'Donate the contributor via PayPal.me, amount is up to you')](https://www.paypal.me/biesior/4.99EUR)
-[![State](https://img.shields.io/static/v1?label=sh-touch&message=0.9.0-beta&color=blue 'Latest known version')](https://github.com/biesior/bash-scripts/)
+[![State](https://img.shields.io/static/v1?label=sh-touch&message=0.9.3-beta&color=blue 'Latest known version')](https://github.com/biesior/bash-scripts/)
 [![Minimum bash version](https://img.shields.io/static/v1?label=bash&message=3.2+or+higher&color=blue 'Minimum Bash version to run this script')](https://www.gnu.org/software/bash/)
 
 ### What it does?  
