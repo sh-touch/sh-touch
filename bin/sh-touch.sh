@@ -22,7 +22,7 @@ fi
 
 # Semantic version for this script:
 SemanticProject='sh-touch'
-SemanticVersion='0.9.0-beta'
+SemanticVersion='0.9.2-beta'
 SemanticRepository='https://github.com/sh-touch/sh-touched/'
 SemanticFile='bin/sh-touch'
 
